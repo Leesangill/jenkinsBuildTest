@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace ="SampleMapper">
+
+ 	<select id="searchData" parameterType="com.tobe.nexa17.sampleVO.sampleVO"  resultType="com.tobe.nexa17.sampleVO.sampleVO">
+	select TO_NUMBER(CUST_ID) AS CUST_ID, CUST_NM, CUST_BIZ_NO, CUST_GRADE, CUST_DEPT, CUST_EMP_NM, CUST_TEL, CUST_TYPE, CUST_AMT, USE_YN, REG_DATE from TB_INICIS
+	order by CUST_ID
+	</select>
+	
+	<insert id="insertData" parameterType="com.tobe.nexa17.sampleVO.sampleVO" >
+	insert into TB_INICIS(CUST_ID, CUST_NM, CUST_BIZ_NO, CUST_GRADE, CUST_DEPT, CUST_EMP_NM, CUST_TEL, CUST_TYPE, CUST_AMT, USE_YN, REG_DATE) 
+	values (#{CUST_ID}, #{CUST_NM}, #{CUST_BIZ_NO}, #{CUST_GRADE}, #{CUST_DEPT}, #{CUST_EMP_NM}, #{CUST_TEL}, #{CUST_TYPE}, #{CUST_AMT}, #{USE_YN}, #{REG_DATE})
+	</insert>
+	
+	<update id="updateData" parameterType="com.tobe.nexa17.sampleVO.sampleVO">
+	update TB_INICIS set CUST_NM=#{CUST_NM}, CUST_BIZ_NO=#{CUST_BIZ_NO}, CUST_GRADE=#{CUST_GRADE}, CUST_DEPT=#{CUST_DEPT},CUST_EMP_NM=#{CUST_EMP_NM}, 
+	CUST_TEL=#{CUST_TEL}, CUST_TYPE=#{CUST_TYPE}, CUST_AMT=#{CUST_AMT}, USE_YN=#{USE_YN}, REG_DATE=#{REG_DATE}
+	where CUST_ID = #{CUST_ID}
+	</update>
+	
+	<delete id="deleteData" parameterType="com.tobe.nexa17.sampleVO.sampleVO">
+	delete from TB_INICIS where CUST_ID=#{CUST_ID}
+	</delete>
+</mapper>
