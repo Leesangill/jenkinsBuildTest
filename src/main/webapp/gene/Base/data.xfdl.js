@@ -194,7 +194,7 @@
         {
         	trace("Errormsg ::: " + e.errormsg);
         	trace("ErrorType ::: " + e.errortype);
-        	trace("Error statuscode ::: " + e.statuscode);
+        	//trace("Error statuscode ::: " + e.statuscode);
         };
         //엑셀 import
         this.Button05_onclick = function(obj,e)
