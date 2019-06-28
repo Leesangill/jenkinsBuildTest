@@ -202,7 +202,7 @@
         	this.objImport.set_importurl(this.exUrl);
         	this.objImport.set_importtype("nexacro.ImportTypes.EXCEL2007");
         	this.objImport.importData("","Sheet1!A1:K169","Dataset00=output1");
-            //trace("rwrw");
+            trace("rwrw");
         };
 
         this.objImport_onsuccess = function(obj,e)
